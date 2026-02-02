@@ -1,0 +1,31 @@
+{% extends 'scoring/base.html' %}
+
+{% block content %}
+<div class="row mb-4">
+    <div class="col-md-8 mx-auto text-center">
+        <h1 class="display-6 fw-bold mb-3">Practice Your Essay Writing</h1>
+        <p class="text-muted lead">Get instant feedback and scores powered by AI.</p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-8 mx-auto">
+        {% for question in questions %}
+        <div class="card p-4 mb-3">
+            <div class="d-flex justify-content-between align-items-center">
+                <div>
+                    <h5 class="card-title mb-1">{{ question.title }}</h5>
+                    <p class="text-muted small mb-0">Max Score: {{ question.max_score }}</p>
+                </div>
+                <a href="{% url 'submit_essay' question.id %}" class="btn btn-primary rounded-pill">Start Writing</a>
+            </div>
+        </div>
+        {% empty %}
+        <div class="text-center py-5">
+            <p class="text-muted">No questions available yet.</p>
+            <a href="{% url 'create_question' %}" class="btn btn-outline-primary">Create First Question</a>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

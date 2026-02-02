@@ -1,0 +1,24 @@
+{% extends 'scoring/base.html' %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-6 mx-auto text-center">
+        <div class="card p-5">
+            <h2 class="mb-4">Assessment Result</h2>
+
+            <div
+                class="score-circle {% if essay.score >= 70 %}bg-success{% elif essay.score >= 40 %}bg-warning{% else %}bg-danger{% endif %} mb-4 shadow">
+                {{ essay.score|floatform:0 }}
+            </div>
+
+            <h4 class="mb-3">{{ essay.student_name }}</h4>
+            <p class="text-muted">Detailed score breakdown is not yet available in this version.</p>
+
+            <div class="d-flex justify-content-center gap-2 mt-4">
+                <a href="{% url 'submit_essay' essay.question.id %}" class="btn btn-outline-secondary">Try Again</a>
+                <a href="{% url 'index' %}" class="btn btn-primary">Back to Home</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
