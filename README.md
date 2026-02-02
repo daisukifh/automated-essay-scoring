@@ -231,21 +231,8 @@ For production deployment:
 - Performance depends on text quality and length
 - No advanced linguistic analysis
 
-## 📄 License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-## 👨‍💻 Author
-
-**Daisuki FH**
-- GitHub: [@daisukifh](https://github.com/daisukifh)
-
 ## 🙏 Acknowledgments
 
 - Django framework for rapid web development
 - scikit-learn for machine learning capabilities
 - Bootstrap for responsive UI components
-
----
-
-*Built with ❤️ for educational purposes*
